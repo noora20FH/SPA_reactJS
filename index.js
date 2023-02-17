@@ -5,7 +5,10 @@ const root = document.getElementById("root");
 linkHome.onclick = function (event) {
   event.preventDefault();
   history.pushState(null, "", event.target.href);
+  // sebelum root ditambahkan HomePage, root akan di clear dulu 
   root.innerHTML = "";
+  // tambahkan home page function pada root
+  // memanggil fungsi HomePage()
   root.appendChild(HomePage());
 };
 
@@ -16,7 +19,12 @@ linkAbout.onclick = function (event) {
   root.appendChild(AboutPage());
 };
 
+// client side rendering
+// membuat elemen(button,input,etc.)/merender elemen di client side atau JavaScript
+
+// ?function to make elements in home page 
 function HomePage() {
+  // create 'input' and'paragraph' element
   const p = document.createElement("p");
   p.textContent = "Welcome to Home Page";
 

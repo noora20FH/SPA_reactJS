@@ -32,10 +32,13 @@ function HomePage() {
 
   const input = document.createElement("input");
   input.placeholder = "enter your name";
+  // untuk mengganti isi tectContent sesuai input yg dimasukkan
   input.oninput = function (event) {
+    // akan mengganti value dalam textPreview
     textPreview.textContent = event.target.value;
   };
 
+  // memasukkan paragraf dan input kedalam variabel div
   const div = document.createElement("div");
   div.append(p);
   div.append(input);
@@ -44,6 +47,7 @@ function HomePage() {
   return div;
 }
 
+// buat about page
 function AboutPage() {
   const p = document.createElement("p");
   p.textContent = "Welcome to About Page";

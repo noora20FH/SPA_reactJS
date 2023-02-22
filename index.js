@@ -1,13 +1,18 @@
 const root = document.getElementById("root");
 
+// pada step yang sebelumnya, kita membuat link" yang serupa pada navbar, about, home
+
 function Link(props) {
   const a = document.createElement("a");
   a.href = props.href;
   a.textContent = props.label;
   a.onclick = function (event) {
+    // mencegah agar tidak pindah halaman 
     event.preventDefault();
     history.pushState(null, "", event.target.href);
+    // dihapus inner html nya
     root.innerHTML = "";
+    // menambahkan komponen yg kita buat
     root.appendChild(props.Component());
   };
   return a;

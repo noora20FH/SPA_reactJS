@@ -1,5 +1,6 @@
 const root = document.getElementById("root");
 
+// navbar dipindah k file js
 function Navbar() {
   const linkHome = document.createElement("a");
   linkHome.href = "#home";
@@ -8,6 +9,7 @@ function Navbar() {
     event.preventDefault();
     history.pushState(null, "", event.target.href);
     root.innerHTML = "";
+    // jika link home diklik maka akan menuju ke HomePage 
     root.appendChild(HomePage());
   };
 
@@ -18,9 +20,11 @@ function Navbar() {
     event.preventDefault();
     history.pushState(null, "", event.target.href);
     root.innerHTML = "";
+    // jika link aboutt di  klik maka akan menuju ke about
     root.appendChild(AboutPage());
   };
 
+  // wrap linkHome and linkAbout 
   const div = document.createElement("div");
   div.append(linkHome);
   div.append(linkAbout);
@@ -29,6 +33,7 @@ function Navbar() {
 }
 
 function HomePage() {
+  // panggil navbar
   const navbar = Navbar();
 
   const p = document.createElement("p");
@@ -41,7 +46,7 @@ function HomePage() {
   input.oninput = function (event) {
     textPreview.textContent = event.target.value;
   };
-
+  // wrap up all the elements in div
   const div = document.createElement("div");
   div.append(navbar);
   div.append(p);
